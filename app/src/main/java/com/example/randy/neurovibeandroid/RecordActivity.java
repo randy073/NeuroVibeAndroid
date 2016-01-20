@@ -1,9 +1,16 @@
 package com.example.randy.neurovibeandroid;
 
 import android.app.Activity;
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import com.example.randy.neurovibeandroid.MySQLiteHelper;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 
@@ -25,10 +32,11 @@ public class RecordActivity extends Activity {
         Intent mainIntent = getIntent();
         Bundle b = mainIntent.getExtras();
 
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
 
+        mode = sharedPreferences.getString("mode",null);
 
         if(b != null){
-             mode = (String) b.get("NeuroVibeAndroid.MODE");
              rand_num = (int) b.get("NeuroVibeAndroid.RANDOM_NUMBER");
         }
 
@@ -38,11 +46,19 @@ public class RecordActivity extends Activity {
             displayMode = "public";
         }
 
-        if(mode.equals("testing")){
+        if(mode.equals("Testing")){
             showTest();
         }else{
             showTraining();
         }
+
+//        Intent mStartActivity = new Intent(this, MainActivity.class);
+//        mStartActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//        int mPendingIntentId = 123456;
+//        PendingIntent mPendingIntent = PendingIntent.getActivity(getApplicationContext(), mPendingIntentId,mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+//        AlarmManager mgr = (AlarmManager)getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+//        mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 10000, mPendingIntent);
+
 
 
     }
