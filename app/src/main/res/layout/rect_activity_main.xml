@@ -13,6 +13,15 @@
         android:layout_marginTop="20dp"
         android:entries="@array/mode_array"
         android:prompt="@string/mode_spinner_prompt">
-
     </Spinner>
+    <Button
+        android:id="@+id/vibrate_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/vibrate_button"/>
+    <Button
+        android:id="@+id/pattern_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/pattern_button"/>
 </LinearLayout>

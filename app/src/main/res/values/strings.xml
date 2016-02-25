@@ -3,6 +3,8 @@
     <string name="hello_round">NeuroVibe Android</string>
     <string name="hello_square">NeuroVibe Android</string>
     <string name="mode_spinner_prompt">Select Mode</string>
+    <string name="vibrate_button">Vibrate PWM</string>
+    <string name="pattern_button">Vibrate Pattern</string>
 
     <string-array name="mode_array">
         <item>Training</item>

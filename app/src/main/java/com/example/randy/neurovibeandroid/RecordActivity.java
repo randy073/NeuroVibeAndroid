@@ -103,6 +103,9 @@ public class RecordActivity extends Activity {
 
     }
 
+
+
+
     public void showTraining(){
         int imgNumber;
         if(displayMode.equals("public")){
